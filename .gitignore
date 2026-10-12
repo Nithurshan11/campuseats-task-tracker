@@ -1,16 +1,30 @@
-# Node
+# Dependencies
 node_modules/
-npm-debug.log*
-.npm
+**/node_modules/
+
+# Production builds
+dist/
+**/dist/
+dist-ssr/
+
+# Environment files and secrets
 .env
 .env.*
+!.env.example
+*.local
+**/appsettings.Development.json
 
-# Build
-dist/
+# .NET Build artifacts
 bin/
+**/bin/
 obj/
+**/obj/
 
-# OS / editor
+# IDE and OS files
+.vs/
+.vscode/
+*.user
+*.suo
 .DS_Store
 Thumbs.db
-*.log
+

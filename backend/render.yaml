@@ -1,0 +1,21 @@
+services:
+  - type: web
+    name: campuseats-api
+    runtime: docker
+    dockerfilePath: ./Dockerfile
+    dockerContext: .
+    plan: free
+    healthCheckPath: /
+    envVars:
+      - key: ASPNETCORE_ENVIRONMENT
+        value: Production
+      - key: ConnectionStrings__Default
+        sync: false
+      - key: Jwt__Key
+        sync: false
+      - key: Jwt__Issuer
+        value: CampusEats
+      - key: Jwt__Audience
+        value: CampusEatsUsers
+      - key: PORT
+        value: "8080"
